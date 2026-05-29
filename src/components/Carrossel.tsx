@@ -11,8 +11,8 @@ import {
 } from "@/components/ui/carousel"
 
 const carrosselImagens = [
-    {src:"/carrossel/1.jpg",alt:"Livros de Critica Literária"},
-    {src:"/carrossel/2.jpg",alt:"Livros de Filosofia"}
+    {src:"/carrossel/1.png",alt:"banner1"},
+    {src:"/carrossel/2.png",alt:"banner2"}
 ]
 
 export default function Carrossel() {
