@@ -4,8 +4,6 @@ import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-
-
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
   subsets: ["latin"],
