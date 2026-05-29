@@ -28,8 +28,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-br"
-      className={`${spaceGrotesk.variable} ${inter.variable} h-full antialiased`}
-    >
+      className={`${spaceGrotesk.variable} ${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <Header />
         <main className="flex-1">
