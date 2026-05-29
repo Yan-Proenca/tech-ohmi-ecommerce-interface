@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter } from "next/font/google";
+import { Space_Grotesk, Inter, Geist } from "next/font/google";
 import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -28,7 +31,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-br"
-      className={`${spaceGrotesk.variable} ${inter.variable} h-full antialiased`}>
+      className={cn("h-full", "antialiased", spaceGrotesk.variable, inter.variable, "font-sans", geist.variable)}>
       <body className="min-h-full flex flex-col">
         <Header />
         <main className="flex-1">
