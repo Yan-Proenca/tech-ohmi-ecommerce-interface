@@ -12,7 +12,7 @@ export default function Header() {
             height={50}
             className="h-8 w-auto object-contain"
           />
-          <h1 className="text-lg font-bold text-yellow-600">
+          <h1 className="text-lg font-bold text-blue-600">
             Tech - Ohmi
           </h1>
         </div>
