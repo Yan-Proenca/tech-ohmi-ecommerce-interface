@@ -13,7 +13,7 @@ export default function Header() {
             className="h-8 w-auto object-contain"
           />
           <h1 className="text-lg font-bold text-yellow-600">
-            Pensata
+            Tech - Ohmi
           </h1>
         </div>
 
