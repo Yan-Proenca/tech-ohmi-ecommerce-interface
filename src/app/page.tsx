@@ -25,34 +25,62 @@ export default function Home() {
         {/* Card 1: Caderno */}
         <CardProduto
           id={1}
-          title="Caderno Inteligente Pastel"
-          description="Caderno com discos e folhas reposicionáveis. Capa dura com acabamento premium em tons pastel."
+          title="Câmera Inteligente"
+          description="Câmera com tecnologia de última geração. Ideal para capturar momentos especiais com qualidade impecável."
           price={89.90}
-          imageSrc="/produtos/caderno.png"
+          imageSrc="/produtos/camera.png"
           destaque={true}
         />
 
         {/* Card 2: Estojo */}
         <CardProduto
           id={2}
-          title="Estojo Holográfico Grande"
-          description="Estojo espaçoso com divisórias internas organizadoras e material reflexivo de alta resistência."
+          title="Roteador Inteligente"
+          description="Roteador com tecnologia de última geração. Ideal para conectar todos os seus dispositivos com velocidade e confiabilidade."
           price={34.90}
-          imageSrc="/produtos/estojo.png"
+          imageSrc="/produtos/roteador.png"
           destaque={false}
         />
 
         {/* Card 3: Canetas */}
         <CardProduto
           id={3}
-          title="Kit Canetas Gel - 12 Cores"
-          description="Escrita fluida com fluxo contínuo de tinta gel. Contém cores básicas, pastel e tons neon."
+          title="Maçaneta Inteligente"
+          description="Maçaneta com tecnologia de última geração. Ideal para segurança e praticidade em portas modernas."
           price={45.00}
-          imageSrc="/produtos/canetas.png"
+          imageSrc="/produtos/macaneta.png"
           destaque={false}
         />
 
-      </div>
+      <CardProduto
+          id={4}
+          title="SmartTV 4K"
+          description="Televisão com resolução 4K e tecnologia de última geração. Ideal para uma experiência de entretenimento imersiva."
+          price={499.90}
+          imageSrc="/produtos/smarttv.png"
+          destaque={false}
+        />
+
+      <CardProduto
+          id={5}
+          title="Termostato Inteligente"
+          description="Termostato com tecnologia de última geração. Ideal para controle de temperatura e eficiência energética."
+          price={199.90}
+          imageSrc="/produtos/termostato.png"
+          destaque={false}
+        />
+
+       <CardProduto
+          id={6}
+          title="Aspirador Robô"
+          description="Aspirador robô com tecnologia de última geração. Ideal para limpeza automática e conveniência em sua casa."
+          price={149.90}
+          imageSrc="/produtos/aspirador.png"
+          destaque={false}
+        />
+
+        </div>
+  
     </div>
   )
 }

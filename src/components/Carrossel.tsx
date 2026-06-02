@@ -14,8 +14,8 @@ import {
 
 // Caminhos absolutos apontando para public/carrossel/
 const carrosselImagens = [
-    { src: "/carrossel/1.png", alt: "Oferta com cupom" },
-    { src: "/carrossel/2.png", alt: "Dia dos namorados" },
+  { src: "/carrossel/inicio.png", alt: "Imagem 1" },
+  { src: "/carrossel/produtos.png", alt: "Imagem 2" }
 ]
 
 export default function Carrossel() {
@@ -36,7 +36,7 @@ export default function Carrossel() {
             <CarouselContent>
                 {carrosselImagens.map((imagem, index) => (
                     <CarouselItem key={index}>
-                        <div className="relative w-full h-[300px] md:h-[450px] overflow-hidden">
+                        <div className="relative w-full h-[300px] md:h-[550px] overflow-hidden">
                             <Image
                               src={imagem.src}
                               alt={imagem.alt}
