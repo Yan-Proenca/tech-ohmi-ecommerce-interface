@@ -3,33 +3,26 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="w-full h-16 bg-white border-b border-sIate-2ee px-36 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <Image
-            src="/logo/logo.png"
-            alt="Logo da empresa"
-            width={50}
-            height={50}
-            className="h-8 w-auto object-contain"
-          />
-          <h1 className="text-lg font-bold text-blue-600">
-            Tech - Ohmi
-          </h1>
-        </div>
+    <header className="w-full bg-white border-b border-slate-200 py-4 px-6">
+      <div className="max-w-6xl mx-auto flex justify-between items-center">
+        {/* Logo / Home */}
+        <Link href="/" className="font-bold text-xl text-slate-800">
+          Minha Loja Smart
+        </Link>
 
-
-        <nav className="flex space-x-6">
-          <Link href="/" className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">
-            Home
+        {/* Menu de Navegação */}
+        <nav className="flex gap-6">
+          <Link href="/" className="text-slate-600 hover:text-slate-900 transition-colors">
+            Início
           </Link>
-          <Link href="/produtos" className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">
+          <Link href="/produtos" className="text-slate-600 hover:text-slate-900 transition-colors font-medium">
             Produtos
           </Link>
-          <Link href="/contato" className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">
+          <Link href="/contato" className="text-slate-600 hover:text-slate-900 transition-colors">
             Contato
           </Link>
         </nav>
-
+      </div>
     </header>
-  );
+  )
 }
