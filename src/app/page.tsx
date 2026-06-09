@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="w-full min-h-screen bg-slate-50 pb-12">
       {/* Carrossel de Banner no Topo */}
-      <Carrossel />
+      <Carrossel /> 
 
       {/* Título da Seção */}
       <div className="text-center my-10">
@@ -22,17 +22,16 @@ export default function Home() {
       */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
 
-        {/* Card 1: Caderno */}
+        {/* Card 1: Camera Inteligente */}
         <CardProduto
           id={1}
           title="Câmera Inteligente"
           description="Câmera com tecnologia de última geração. Ideal para capturar momentos especiais com qualidade impecável."
-          price={89.90}
+          price={99.90}
           imageSrc="/produtos/camera.png"
           destaque={true}
         />
 
-        {/* Card 2: Estojo */}
         <CardProduto
           id={2}
           title="Roteador Inteligente"
@@ -42,12 +41,11 @@ export default function Home() {
           destaque={false}
         />
 
-        {/* Card 3: Canetas */}
         <CardProduto
           id={3}
           title="Maçaneta Inteligente"
           description="Maçaneta com tecnologia de última geração. Ideal para segurança e praticidade em portas modernas."
-          price={45.00}
+          price={99.90}
           imageSrc="/produtos/macaneta.png"
           destaque={false}
         />

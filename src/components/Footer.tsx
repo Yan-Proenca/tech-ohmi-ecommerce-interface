@@ -7,8 +7,8 @@ export default function Footer() {
   return (
     <footer className="w-full bg-white border-t border-slate-200 px-36 py-8 flex flex-col gap-6">
       <div className="flex justify-between items-center text-xs text-slate-400">
-        <p>&copy; {currentYear} Sensata. Todos os direitos reservados.</p>
-        <p className="text-slate-300">Feito com carinho para você.</p>
+        <p>&copy; {currentYear} Tech-Ohmi. Todos os direitos reservados.</p>
+        <p className="text-slate-300">Feito com carinho para sua automoção.</p>
       </div>
     </footer>
   );
