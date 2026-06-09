@@ -1,129 +1,251 @@
-"use client" 
+"use client"
+
+import React from "react"
+import dynamic from "next/dynamic"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Label } from "@/components/ui/label"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Mail, Phone, MapPin, Send, ArrowRight } from "lucide-react"
+
+// Importação Dinâmica de MapaContato com SSR desabilitado (ssr: false)
+const MapaContato = dynamic(() => import("@/components/MapaContato"), {
+  ssr: false,
+  loading: () => (
+    <div className="h-[300px] w-full bg-blue-50/50 border border-blue-100 flex items-center justify-center text-blue-500 font-medium animate-pulse rounded-xl">
+      <div className="flex items-center space-x-2">
+        <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+        <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+        <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce"></div>
+        <span className="text-sm pl-1 text-blue-700/80">Carregando mapa tecnológico...</span>
+      </div>
+    </div>
+  ),
+})
 
 export default function Contato() {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    alert("Mensagem enviada com sucesso! Entraremos em contato em breve.")
+  }
+
   return (
-    <div className="min-h-screen bg-zinc-50 text-zinc-800 flex items-center justify-center p-6 md:p-12">
-      <div className="max-w-6xl w-full bg-white rounded-2xl shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-12">
-        
-        {/* COLUNA ESQUERDA: Informações e Links */}
-        <div className="md:col-span-5 bg-indigo-900 p-8 md:p-12 text-white flex flex-col justify-between relative overflow-hidden">
-          <div className="absolute -top-10 -right-10 w-40 h-40 bg-indigo-800 rounded-full blur-2xl opacity-50"></div>
-          
-          <div className="space-y-6 relative z-10">
-            <div>
-              <span className="text-xs font-bold tracking-widest uppercase text-indigo-300">Fale Conosco</span>
-              <h1 className="text-3xl md:text-4xl font-extrabold mt-1 tracking-tight">Vamos conversar?</h1>
-            </div>
-            <p className="text-indigo-200 text-sm leading-relaxed">
-              Tem alguma dúvida, proposta ou quer apenas trocar uma ideia? Nossa equipe está pronta para te atender. Escreva ao lado ou use nossos canais.
-            </p>
-          </div>
+    <div className="w-full min-h-screen bg-slate-50/60 text-slate-800 antialiased relative overflow-hidden py-16 px-4 sm:px-6 lg:px-8">
+      {/* Detalhes de luz de fundo para a estética Tech */}
+      <div className="absolute top-0 right-0 -z-10 w-[400px] h-[400px] bg-blue-400/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-10 left-0 -z-10 w-[300px] h-[300px] bg-indigo-400/10 rounded-full blur-3xl pointer-events-none"></div>
 
-          <div className="space-y-6 my-8 relative z-10">
-            <div className="flex items-center space-x-4 group">
-              <div className="p-3 bg-indigo-800/60 rounded-xl group-hover:bg-indigo-700/80 transition-colors">
-                <svg className="w-5 h-5 text-indigo-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                </svg>
-              </div>
-              <div>
-                <p className="text-xs text-indigo-300 font-medium">Telefone</p>
-                <p className="text-sm font-semibold text-white">+55 (15) 99914-3140</p>
-              </div>
-            </div>
+      <div className="max-w-6xl mx-auto relative z-10">
 
-            <div className="flex items-center space-x-4 group">
-              <div className="p-3 bg-indigo-800/60 rounded-xl group-hover:bg-indigo-700/80 transition-colors">
-                <svg className="w-5 h-5 text-indigo-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                </svg>
-              </div>
-              <div>
-                <p className="text-xs text-indigo-300 font-medium">E-mail</p>
-                <p className="text-sm font-semibold text-white">yan@algumacoisa.com.br</p>
-              </div>
-            </div>
-
-            <div className="flex items-center space-x-4 group">
-              <div className="p-3 bg-indigo-800/60 rounded-xl group-hover:bg-indigo-700/80 transition-colors">
-                <svg className="w-5 h-5 text-indigo-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                </svg>
-              </div>
-              <div>
-                <p className="text-xs text-indigo-300 font-medium">Localização</p>
-                <p className="text-sm font-semibold text-white">Av. Missão, 414 - Itapeva/SP</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex space-x-4 pt-4 border-t border-indigo-800 relative z-10">
-            <span className="text-xs text-indigo-300 self-center">Siga-nos:</span>
-            <div className="w-8 h-8 rounded-full bg-indigo-800 flex items-center justify-center text-xs font-bold cursor-pointer hover:bg-indigo-600 transition-colors">Ln</div>
-            <div className="w-8 h-8 rounded-full bg-indigo-800 flex items-center justify-center text-xs font-bold cursor-pointer hover:bg-indigo-600 transition-colors">Gh</div>
-            <div className="w-8 h-8 rounded-full bg-indigo-800 flex items-center justify-center text-xs font-bold cursor-pointer hover:bg-indigo-600 transition-colors">In</div>
-          </div>
+        {/* Cabeçalho Principal */}
+        <div className="text-center mb-14 space-y-3">
+          <span className="text-xs font-bold tracking-widest uppercase px-3 py-1 bg-blue-50 text-blue-600 rounded-full border border-blue-200/60 inline-block">
+            Contato e Suporte
+          </span>
+          <h1 className="text-4xl md:text-5xl font-black text-blue-950 tracking-tight bg-gradient-to-r from-blue-950 to-blue-700 bg-clip-text text-transparent">
+            Fale Conosco
+          </h1>
+          <p className="text-slate-500 max-w-2xl mx-auto text-base md:text-lg">
+            Tem alguma dúvida, sugestão ou quer iniciar um projeto de automação? Nossa equipe especializada está pronta para responder você.
+          </p>
         </div>
 
-        {/* COLUNA DIREITA: Formulário */}
-        <div className="md:col-span-7 p-8 md:p-12 flex flex-col justify-center">
-          <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="flex flex-col space-y-1.5">
-                <label htmlFor="name" className="text-xs font-semibold text-zinc-500 uppercase tracking-wider">Nome Completo</label>
-                <input 
-                  type="text" 
-                  id="name"
-                  placeholder="Ex: João Silva" 
-                  className="w-full px-4 py-3 border border-zinc-200 rounded-xl bg-zinc-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all text-sm placeholder:text-zinc-400"
-                />
+        {/* Grid Principal */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+
+          {/* Coluna Esquerda: Informações e Mapa */}
+          <div className="space-y-6 flex flex-col justify-between">
+
+            {/* Canais de Atendimento */}
+            <Card className="border-slate-200/80 shadow-md bg-white/80 backdrop-blur-md rounded-2xl flex-1">
+              <CardHeader className="pb-4">
+                <CardTitle className="text-xl md:text-2xl font-bold text-blue-950 flex items-center gap-2">
+                  Canais de Atendimento
+                </CardTitle>
+                <CardDescription className="text-slate-500 text-sm">
+                  Entre em contato diretamente através dos nossos telefones, e-mail institucional ou redes oficiais.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+
+                {/* Lista de Contatos */}
+                <div className="space-y-4">
+
+                  {/* E-mail */}
+                  <div className="flex items-center space-x-4 p-3 rounded-xl border border-transparent hover:border-blue-100 hover:bg-blue-50/40 transition-all group duration-300">
+                    <div className="p-3 bg-blue-50 text-blue-600 rounded-xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                      <Mail className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-blue-600/80 uppercase tracking-wider">E-mail</p>
+                      <p className="text-blue-950 font-semibold text-sm">contato@papelariarabisco.com.br</p>
+                    </div>
+                  </div>
+
+                  {/* Telefones */}
+                  <div className="flex items-center space-x-4 p-3 rounded-xl border border-transparent hover:border-blue-100 hover:bg-blue-50/40 transition-all group duration-300">
+                    <div className="p-3 bg-blue-50 text-blue-600 rounded-xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                      <Phone className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-blue-600/80 uppercase tracking-wider">Telefones</p>
+                      <p className="text-blue-950 font-semibold text-sm">(11) 4002-8922 / (11) 99999-8888</p>
+                    </div>
+                  </div>
+
+                  {/* Endereço Físico */}
+                  <div className="flex items-center space-x-4 p-3 rounded-xl border border-transparent hover:border-blue-100 hover:bg-blue-50/40 transition-all group duration-300">
+                    <div className="p-3 bg-blue-50 text-blue-600 rounded-xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                      <MapPin className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-blue-600/80 uppercase tracking-wider">Endereço</p>
+                      <p className="text-blue-950 font-semibold text-sm">Av. Paulista, 1000 - Bela Vista, São Paulo - SP</p>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div className="h-[1px] bg-gradient-to-r from-slate-100 via-slate-200 to-slate-100" />
+
+                {/* Bloco de Redes Sociais */}
+                <div className="pt-1">
+                  <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Conecte-se Conosco</p>
+                  <div className="flex space-x-3">
+
+                    {/* Instagram */}
+                    <a
+                      href="https://instagram.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-3 bg-slate-50 border border-slate-200/60 rounded-xl hover:bg-blue-600 hover:text-white hover:border-blue-600 text-slate-600 transition-all duration-300 hover:scale-110 shadow-sm"
+                    >
+                      <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                      </svg>
+                    </a>
+
+                    {/* Facebook */}
+                    <a
+                      href="https://facebook.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-3 bg-slate-50 border border-slate-200/60 rounded-xl hover:bg-blue-600 hover:text-white hover:border-blue-600 text-slate-600 transition-all duration-300 hover:scale-110 shadow-sm"
+                    >
+                      <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                      </svg>
+                    </a>
+
+                    {/* Youtube */}
+                    <a
+                      href="https://youtube.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-3 bg-slate-50 border border-slate-200/60 rounded-xl hover:bg-blue-600 hover:text-white hover:border-blue-600 text-slate-600 transition-all duration-300 hover:scale-110 shadow-sm"
+                    >
+                      <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                      </svg>
+                    </a>
+
+                  </div>
+                </div>
+
+              </CardContent>
+            </Card>
+
+            {/* Bloco do Mapa com Leaflet Integrado */}
+            <Card className="overflow-hidden h-[280px] border border-slate-200/80 shadow-md relative z-10 rounded-2xl group">
+              <CardContent className="p-0 h-full w-full relative transition-all duration-300 group-hover:shadow-inner">
+                <MapaContato />
+              </CardContent>
+            </Card>
+
+          </div>
+
+          {/* Coluna Direita: Formulário de Envio */}
+          <div className="h-full">
+            <Card className="border-slate-200/80 shadow-md bg-white rounded-2xl h-full flex flex-col justify-between">
+              <div>
+                <CardHeader className="pb-4">
+                  <CardTitle className="text-xl md:text-2xl font-bold text-blue-950">
+                    Envie uma Mensagem
+                  </CardTitle>
+                  <CardDescription className="text-slate-500 text-sm">
+                    Preencha o formulário abaixo e retornaremos o contato em até 24 horas úteis.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <form onSubmit={handleSubmit} className="space-y-4">
+
+                    {/* Campo Nome */}
+                    <div className="space-y-1.5">
+                      <Label htmlFor="nome" className="text-xs font-bold uppercase tracking-wider text-slate-500">Nome Completo</Label>
+                      <Input 
+                        id="nome" 
+                        placeholder="Digite seu nome completo" 
+                        className="rounded-xl border-slate-200 focus-visible:ring-blue-600 focus-visible:border-blue-600 bg-slate-50/50 py-5 transition-all" 
+                        required 
+                      />
+                    </div>
+
+                    {/* Campo E-mail */}
+                    <div className="space-y-1.5">
+                      <Label htmlFor="email" className="text-xs font-bold uppercase tracking-wider text-slate-500">E-mail Corporativo</Label>
+                      <Input 
+                        id="email" 
+                        type="email" 
+                        placeholder="seuemail@exemplo.com.br" 
+                        className="rounded-xl border-slate-200 focus-visible:ring-blue-600 focus-visible:border-blue-600 bg-slate-50/50 py-5 transition-all" 
+                        required 
+                      />
+                    </div>
+
+                    {/* Campo Assunto */}
+                    <div className="space-y-1.5">
+                      <Label htmlFor="assunto" className="text-xs font-bold uppercase tracking-wider text-slate-500">Assunto</Label>
+                      <Input 
+                        id="assunto" 
+                        placeholder="Ex: Suporte técnico, orçamentos, parcerias" 
+                        className="rounded-xl border-slate-200 focus-visible:ring-blue-600 focus-visible:border-blue-600 bg-slate-50/50 py-5 transition-all" 
+                        required 
+                      />
+                    </div>
+
+                    {/* Campo Mensagem */}
+                    <div className="space-y-1.5">
+                      <Label htmlFor="mensagem" className="text-xs font-bold uppercase tracking-wider text-slate-500">Mensagem</Label>
+                      <Textarea
+                        id="mensagem"
+                        placeholder="Descreva detalhadamente sua solicitação comercial ou dúvida..."
+                        className="min-h-[140px] resize-none rounded-xl border-slate-200 focus-visible:ring-blue-600 focus-visible:border-blue-600 bg-slate-50/50 p-4 transition-all"
+                        required
+                      />
+                    </div>
+
+                    {/* Botão de Envio Customizado com Ícone */}
+                    <div className="pt-2">
+                      <Button 
+                        type="submit" 
+                        className="w-full bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold py-5 rounded-xl shadow-md shadow-blue-100 hover:shadow-lg transition-all group flex items-center justify-center space-x-2"
+                      >
+                        <span>Enviar Mensagem</span>
+                        <Send className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-0.5 duration-300" />
+                      </Button>
+                    </div>
+
+                  </form>
+                </CardContent>
               </div>
-              <div className="flex flex-col space-y-1.5">
-                <label htmlFor="email" className="text-xs font-semibold text-zinc-500 uppercase tracking-wider">E-mail Corporativo</label>
-                <input 
-                  type="email" 
-                  id="email"
-                  placeholder="joao@empresa.com" 
-                  className="w-full px-4 py-3 border border-zinc-200 rounded-xl bg-zinc-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all text-sm placeholder:text-zinc-400"
-                />
-              </div>
-            </div>
+            </Card>
+          </div>
 
-            <div className="flex flex-col space-y-1.5">
-              <label htmlFor="subject" className="text-xs font-semibold text-zinc-500 uppercase tracking-wider">Assunto</label>
-              <input 
-                type="text" 
-                id="subject"
-                placeholder="Qual o motivo do contato?" 
-                className="w-full px-4 py-3 border border-zinc-200 rounded-xl bg-zinc-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all text-sm placeholder:text-zinc-400"
-              />
-            </div>
-
-            <div className="flex flex-col space-y-1.5">
-              <label htmlFor="message" className="text-xs font-semibold text-zinc-500 uppercase tracking-wider">Sua Mensagem</label>
-              <textarea 
-                id="message"
-                rows={4}
-                placeholder="Conte-nos um pouco mais sobre o seu projeto ou dúvida..." 
-                className="w-full px-4 py-3 border border-zinc-200 rounded-xl bg-zinc-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all text-sm placeholder:text-zinc-400 resize-none"
-              ></textarea>
-            </div>
-
-            <div className="pt-2">
-              <button 
-                type="submit" 
-                className="w-full sm:w-auto px-8 py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm rounded-xl shadow-md shadow-indigo-200 hover:shadow-lg transition-all transform active:scale-[0.98] flex items-center justify-center space-x-2"
-              >
-                <span>Enviar mensagem</span>
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                </svg>
-              </button>
-            </div>
-          </form>
         </div>
-
       </div>
     </div>
   )
