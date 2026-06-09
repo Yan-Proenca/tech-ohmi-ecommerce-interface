@@ -1,56 +1,51 @@
 [
     {
-    "id": 1,
-    "title": "Câmera Inteligente",
-    "description": "Câmera de segurança com inteligência artificial para monitoramento residencial.",
-    "price": 99.99,
-    "imageSrc": "/produtos/camera.png",
-    "destaque": true
+        "id": 1,
+        "title": "Câmera Inteligente",
+        "description": "Câmera com tecnologia de última geração. Ideal para capturar momentos especiais com qualidade impecável.",
+        "price": 99.90,
+        "imageSrc": "/produtos/camera.png",
+        "destaque": true
     },
-
     {
-    "id": 2,
-    "title": "Roteador Inteligente",
-    "description": "Câmera de segurança com inteligência artificial para monitoramento residencial.",
-    "price": 99.99,
-    "imageSrc": "/produtos/camera.png",
-    "destaque": true
+        "id": 2,
+        "title": "Roteador Inteligente",
+        "description": "Roteador com tecnologia de última geração. Ideal para conectar todos os seus dispositivos com velocidade e confiabilidade.",
+        "price": 34.90,
+        "imageSrc": "/produtos/roteador.png",
+        "destaque": false
     },
-
     {
-    "id": 3,
-    "title": "Câmera Inteligente",
-    "description": "Câmera de segurança com inteligência artificial para monitoramento residencial.",
-    "price": 99.99,
-    "imageSrc": "/produtos/camera.png",
-    "destaque": true
+        "id": 3,
+        "title": "Maçaneta Inteligente",
+        "description": "Maçaneta com tecnologia de última geração. Ideal para segurança e praticidade em portas modernas.",
+        "price": 99.90,
+        "imageSrc": "/produtos/macaneta.png",
+        "destaque": false
     },
-
     {
-    "id": 4,
-    "title": "Câmera Inteligente",
-    "description": "Câmera de segurança com inteligência artificial para monitoramento residencial.",
-    "price": 99.99,
-    "imageSrc": "/produtos/camera.png",
-    "destaque": true
+        "id": 4,
+        "title": "SmartTV 4K",
+        "description": "Televisão com resolução 4K e tecnologia de última geração. Ideal para uma experiência de entretenimento imersiva.",
+        "price": 499.90,
+        "imageSrc": "/produtos/smarttv.png",
+        "destaque": false
     },
-
     {
-    "id": 5,
-    "title": "Câmera Inteligente",
-    "description": "Câmera de segurança com inteligência artificial para monitoramento residencial.",
-    "price": 99.99,
-    "imageSrc": "/produtos/camera.png",
-    "destaque": true
+        "id": 5,
+        "title": "Termostato Inteligente",
+        "description": "Termostato com tecnologia de última geração. Ideal para controle de temperatura e eficiência energética.",
+        "price": 199.90,
+        "imageSrc": "/produtos/termostato.png",
+        "destaque": false
     },
-
     {
-    "id": 6,
-    "title": "Câmera Inteligente",
-    "description": "Câmera de segurança com inteligência artificial para monitoramento residencial.",
-    "price": 99.99,
-    "imageSrc": "/produtos/camera.png",
-    "destaque": true
+        "id": 6,
+        "title": "Aspirador Robô",
+        "description": "Aspirador robô com tecnologia de última geração. Ideal para limpeza automática e conveniência em sua casa.",
+        "price": 149.90,
+        "imageSrc": "/produtos/aspirador.png",
+        "destaque": false
     },
     {
         "id": 7,
