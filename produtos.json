@@ -1,0 +1,407 @@
+[
+    {
+    "id": 1,
+    "title": "Câmera Inteligente",
+    "description": "Câmera de segurança com inteligência artificial para monitoramento residencial.",
+    "price": 99.99,
+    "imageSrc": "/produtos/camera.png",
+    "destaque": true
+    },
+
+    {
+    "id": 2,
+    "title": "Roteador Inteligente",
+    "description": "Câmera de segurança com inteligência artificial para monitoramento residencial.",
+    "price": 99.99,
+    "imageSrc": "/produtos/camera.png",
+    "destaque": true
+    },
+
+    {
+    "id": 3,
+    "title": "Câmera Inteligente",
+    "description": "Câmera de segurança com inteligência artificial para monitoramento residencial.",
+    "price": 99.99,
+    "imageSrc": "/produtos/camera.png",
+    "destaque": true
+    },
+
+    {
+    "id": 4,
+    "title": "Câmera Inteligente",
+    "description": "Câmera de segurança com inteligência artificial para monitoramento residencial.",
+    "price": 99.99,
+    "imageSrc": "/produtos/camera.png",
+    "destaque": true
+    },
+
+    {
+    "id": 5,
+    "title": "Câmera Inteligente",
+    "description": "Câmera de segurança com inteligência artificial para monitoramento residencial.",
+    "price": 99.99,
+    "imageSrc": "/produtos/camera.png",
+    "destaque": true
+    },
+
+    {
+    "id": 6,
+    "title": "Câmera Inteligente",
+    "description": "Câmera de segurança com inteligência artificial para monitoramento residencial.",
+    "price": 99.99,
+    "imageSrc": "/produtos/camera.png",
+    "destaque": true
+    },
+    {
+        "id": 7,
+        "title": "Interruptor Inteligente 3 Teclas",
+        "description": "Controle a iluminação da sua casa por comando de voz ou aplicativo de forma independente.",
+        "price": 79.90,
+        "imageSrc": "/produtos/interruptor-3-teclas.png",
+        "destaque": true
+    },
+    {
+        "id": 8,
+        "title": "Lâmpada Smart RGB Wi-Fi",
+        "description": "Milhões de cores e controle de intensidade para criar o ambiente perfeito na sua casa.",
+        "price": 49.90,
+        "imageSrc": "/produtos/lampada-rgb.png",
+        "destaque": false
+    },
+    {
+        "id": 9,
+        "title": "Plugue de Tomada Inteligente",
+        "description": "Monitore o consumo de energia e ligue ou desligue eletrodomésticos remotamente.",
+        "price": 59.90,
+        "imageSrc": "/produtos/tomada-inteligente.png",
+        "destaque": false
+    },
+    {
+        "id": 10,
+        "title": "Fita LED Smart Wi-Fi",
+        "description": "Iluminação decorativa inteligente com sincronização de música e controle por app.",
+        "price": 89.90,
+        "imageSrc": "/produtos/fita-led-smart.png",
+        "destaque": false
+    },
+    {
+        "id": 11,
+        "title": "Central de Comando Infravermelho",
+        "description": "Substitua todos os controles remotos da sua sala por um único dispositivo inteligente.",
+        "price": 69.90,
+        "imageSrc": "/produtos/controle-infravermelho.png",
+        "destaque": true
+    },
+    {
+        "id": 12,
+        "title": "Sensor de Presença Wi-Fi",
+        "description": "Receba notificações em tempo real no seu smartphone sempre que um movimento for detectado.",
+        "price": 45.00,
+        "imageSrc": "/produtos/sensor-presenca.png",
+        "destaque": false
+    },
+    {
+        "id": 13,
+        "title": "Sensor de Porta e Janela",
+        "description": "Monitore a abertura de portas e janelas e crie rotinas de segurança integradas.",
+        "price": 39.90,
+        "imageSrc": "/produtos/sensor-porta.png",
+        "destaque": false
+    },
+    {
+        "id": 14,
+        "title": "Fechadura Digital Biométrica",
+        "description": "Segurança avançada com abertura por biometria, senha, tag de proximidade ou aplicativo.",
+        "price": 389.90,
+        "imageSrc": "/produtos/fechadura-biometrica.png",
+        "destaque": true
+    },
+    {
+        "id": 15,
+        "title": "Alarme de Inundação Smart",
+        "description": "Detecta vazamentos de água instantaneamente e envia alertas para evitar acidentes.",
+        "price": 74.90,
+        "imageSrc": "/produtos/sensor-inundacao.png",
+        "destaque": false
+    },
+    {
+        "id": 16,
+        "title": "Detector de Fumaça Wi-Fi",
+        "description": "Segurança preventiva que avisa no celular ao menor sinal de fumaça ou princípio de incêndio.",
+        "price": 119.90,
+        "imageSrc": "/produtos/detector-fumaca.png",
+        "destaque": false
+    },
+    {
+        "id": 17,
+        "title": "Hub Inteligente Zigbee",
+        "description": "Central de conexão estável para gerenciar múltiplos dispositivos inteligentes sem sobrecarregar o Wi-Fi.",
+        "price": 159.90,
+        "imageSrc": "/produtos/hub-zigbee.png",
+        "destaque": false
+    },
+    {
+        "id": 18,
+        "title": "Videoporteiro Inteligente",
+        "description": "Atenda suas visitas de onde estiver com áudio bidirecional e câmera HD integrada.",
+        "price": 289.90,
+        "imageSrc": "/produtos/videoporteiro.png",
+        "destaque": true
+    },
+    {
+        "id": 19,
+        "title": "Módulo Relé Wi-Fi",
+        "description": "Automatize circuitos de iluminação existentes ou tomadas comuns de forma embutida.",
+        "price": 32.90,
+        "imageSrc": "/produtos/modulo-rele.png",
+        "destaque": false
+    },
+    {
+        "id": 20,
+        "title": "Controlador de Fita LED RGB",
+        "description": "Transforme fitas de LED comuns em dispositivos inteligentes controlados por voz.",
+        "price": 42.00,
+        "imageSrc": "/produtos/controlador-led.png",
+        "destaque": false
+    },
+    {
+        "id": 21,
+        "title": "Alimentador Pet Inteligente",
+        "description": "Programe horários e porções de ração para seu pet com monitoramento por câmera.",
+        "price": 349.90,
+        "imageSrc": "/produtos/alimentador-pet.png",
+        "destaque": false
+    },
+    {
+        "id": 22,
+        "title": "Irrigador de Jardim Autônomo",
+        "description": "Automatize a rega das suas plantas baseado na previsão do tempo e umidade do solo.",
+        "price": 219.90,
+        "imageSrc": "/produtos/irrigador-smart.png",
+        "destaque": false
+    },
+    {
+        "id": 23,
+        "title": "Válvula de Gás Inteligente",
+        "description": "Fechamento automático do registro de gás ou água em caso de emergência ou detecção de vazamento.",
+        "price": 139.90,
+        "imageSrc": "/produtos/valvula-gas.png",
+        "destaque": false
+    },
+    {
+        "id": 24,
+        "title": "Motor de Cortina Wi-Fi",
+        "description": "Abra e feche suas cortinas automaticamente ao amanhecer ou por comandos programados.",
+        "price": 450.00,
+        "imageSrc": "/produtos/motor-cortina.png",
+        "destaque": true
+    },
+    {
+        "id": 25,
+        "title": "Ar Condicionado Smart",
+        "description": "Climatização inteligente com controle de temperatura à distância antes mesmo de chegar em casa.",
+        "price": 1899.90,
+        "imageSrc": "/produtos/ar-condicionado.png",
+        "destaque": false
+    },
+    {
+        "id": 26,
+        "title": "Purificador de Ar Inteligente",
+        "description": "Monitore a qualidade do ar em tempo real e remova impurezas de forma totalmente automática.",
+        "price": 649.90,
+        "imageSrc": "/produtos/purificador-ar.png",
+        "destaque": false
+    },
+    {
+        "id": 27,
+        "title": "Luminária de Mesa Smart",
+        "description": "Ajuste de temperatura de cor ideal para foco no trabalho ou relaxamento na leitura.",
+        "price": 129.90,
+        "imageSrc": "/produtos/luminaria-mesa.png",
+        "destaque": false
+    },
+    {
+        "id": 28,
+        "title": "Smart Speaker com Tela",
+        "description": "Assista a vídeos, faça chamadas de voz e controle seus dispositivos inteligentes por comandos visuais.",
+        "price": 549.90,
+        "imageSrc": "/produtos/speaker-tela.png",
+        "destaque": true
+    },
+    {
+        "id": 29,
+        "title": "Smart Speaker Mini",
+        "description": "Sua assistente virtual compacta para tocar músicas, tirar dúvidas e gerenciar tarefas diárias.",
+        "price": 239.90,
+        "imageSrc": "/produtos/speaker-mini.png",
+        "destaque": false
+    },
+    {
+        "id": 30,
+        "title": "Sensor de Luminosidade",
+        "description": "Meça a claridade do ambiente para acionamento automatizado de persianas e lâmpadas.",
+        "price": 54.90,
+        "imageSrc": "/produtos/sensor-luminosidade.png",
+        "destaque": false
+    },
+    {
+        "id": 31,
+        "title": "Sensor de Umidade do Solo",
+        "description": "Verifique a saúde das suas plantas acompanhando os níveis exatos de hidratação da terra pelo app.",
+        "price": 48.00,
+        "imageSrc": "/produtos/sensor-solo.png",
+        "destaque": false
+    },
+    {
+        "id": 32,
+        "title": "Fechadura para Móveis Smart",
+        "description": "Proteja gavetas e armários com travas invisíveis liberadas via Bluetooth pelo celular.",
+        "price": 115.00,
+        "imageSrc": "/produtos/fechadura-moveis.png",
+        "destaque": false
+    },
+    {
+        "id": 33,
+        "title": "Projetor Portátil Smart",
+        "description": "Cinema em qualquer lugar com sistema inteligente integrado e conexão Wi-Fi de alta velocidade.",
+        "price": 799.90,
+        "imageSrc": "/produtos/projetor-smart.png",
+        "destaque": false
+    },
+    {
+        "id": 34,
+        "title": "Balança Corporal Inteligente",
+        "description": "Acompanhe sua evolução física com relatórios detalhados de bioimpedância direto no smartphone.",
+        "price": 129.90,
+        "imageSrc": "/produtos/balanca-smart.png",
+        "destaque": false
+    },
+    {
+        "id": 35,
+        "title": "Interruptor Touch de Embutir",
+        "description": "Acabamento sofisticado em vidro temperado com painel sensível ao toque e automação Wi-Fi.",
+        "price": 94.90,
+        "imageSrc": "/produtos/interruptor-touch.png",
+        "destaque": false
+    },
+    {
+        "id": 36,
+        "title": "Controle de Acesso por Cartão",
+        "description": "Gerenciamento seguro para portões residenciais com liberação por tags configuráveis.",
+        "price": 169.90,
+        "imageSrc": "/produtos/controle-acesso.png",
+        "destaque": false
+    },
+    {
+        "id": 37,
+        "title": "Sirene de Alarme Wi-Fi",
+        "description": "Alarme sonoro potente integrado ao seu sistema de sensores domésticos para dissuasão.",
+        "price": 84.90,
+        "imageSrc": "/produtos/sirene-alarme.png",
+        "destaque": false
+    },
+    {
+        "id": 38,
+        "title": "Módulo de Persianas Elétricas",
+        "description": "Compatível com motores tradicionais para trazer automação moderna a persianas de rolo.",
+        "price": 64.90,
+        "imageSrc": "/produtos/modulo-persiana.png",
+        "destaque": false
+    },
+    {
+        "id": 39,
+        "title": "Lâmpada de Filamento Vintage",
+        "description": "Estilo retrô industrial combinado com tecnologia smart de ajuste de intensidade quente.",
+        "price": 69.90,
+        "imageSrc": "/produtos/lampada-filamento.png",
+        "destaque": false
+    },
+    {
+        "id": 40,
+        "title": "Dimerizador Inteligente",
+        "description": "Controle finamente o brilho de circuitos de iluminação compatíveis pelo aplicativo.",
+        "price": 58.00,
+        "imageSrc": "/produtos/dimerizador-smart.png",
+        "destaque": false
+    },
+    {
+        "id": 41,
+        "title": "Soundbar Inteligente com Alexa",
+        "description": "Áudio premium de cinema para sua TV com assistente de voz integrada de fábrica.",
+        "price": 899.90,
+        "imageSrc": "/produtos/soundbar-smart.png",
+        "destaque": true
+    },
+    {
+        "id": 42,
+        "title": "Lixeira Automática com Sensor",
+        "description": "Abertura por aproximação e vedação total contra odores para uma cozinha moderna.",
+        "price": 149.90,
+        "imageSrc": "/produtos/lixeira-sensor.png",
+        "destaque": false
+    },
+    {
+        "id": 43,
+        "title": "Espelho de Banheiro Smart",
+        "description": "Iluminação LED integrada, painel touch frontal e função antiembaçante automática.",
+        "price": 420.00,
+        "imageSrc": "/produtos/espelho-smart.png",
+        "destaque": false
+    },
+    {
+        "id": 44,
+        "title": "Chuveiro Elétrico Inteligente",
+        "description": "Controle exato da temperatura da água e monitoramento do tempo de banho pelo app.",
+        "price": 599.90,
+        "imageSrc": "/produtos/chuveiro-smart.png",
+        "destaque": false
+    },
+    {
+        "id": 45,
+        "title": "Disjuntor Inteligente Wi-Fi",
+        "description": "Proteção elétrica avançada com desligamento remoto e medição geral do consumo da casa.",
+        "price": 189.90,
+        "imageSrc": "/produtos/disjuntor-smart.png",
+        "destaque": true
+    },
+    {
+        "id": 46,
+        "title": "Câmera Externa Solar",
+        "description": "Segurança total sem fios com carregamento via painel solar e detecção humana.",
+        "price": 329.90,
+        "imageSrc": "/produtos/camera-solar.png",
+        "destaque": false
+    },
+    {
+        "id": 47,
+        "title": "Localizador de Chaves Bluetooth",
+        "description": "Encontre suas chaves ou carteira rapidamente emitindo alertas sonoros pelo celular.",
+        "price": 49.90,
+        "imageSrc": "/produtos/tag-localizadora.png",
+        "destaque": false
+    },
+    {
+        "id": 48,
+        "title": "Difusor de Aromas Smart",
+        "description": "Umidifique seu ambiente e controle a dispersão de essências e cores via Wi-Fi.",
+        "price": 134.90,
+        "imageSrc": "/produtos/difusor-smart.png",
+        "destaque": false
+    },
+    {
+        "id": 49,
+        "title": "Módulo Portão Eletrônico",
+        "description": "Abra e feche o portão da garagem usando comandos de voz ou geolocalização do veículo.",
+        "price": 72.00,
+        "imageSrc": "/produtos/modulo-portao.png",
+        "destaque": false
+    },
+    {
+        "id": 50,
+        "title": "Quadro de Distribuição Smart",
+        "description": "Centralize o gerenciamento de energia de múltiplos ambientes de forma modular.",
+        "price": 299.90,
+        "imageSrc": "/produtos/quadro-smart.png",
+        "destaque": false
+    }
+]
