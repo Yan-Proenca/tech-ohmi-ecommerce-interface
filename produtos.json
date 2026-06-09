@@ -105,10 +105,10 @@
     },
     {
         "id": 14,
-        "title": "Fechadura Digital Biométrica",
+        "title": "Fechadura Gaveta Digital Biométrica",
         "description": "Segurança avançada com abertura por biometria, senha, tag de proximidade ou aplicativo.",
         "price": 389.90,
-        "imageSrc": "/produtos/fechadura-biometrica.png",
+        "imageSrc": "/produtos/fechadura--gaveta-biometrica.png",
         "destaque": false
     },
     {
@@ -179,7 +179,7 @@
         "id": 23,
         "title": "Válvula de Gás Inteligente",
         "description": "Fechamento automático do registro de gás ou água em caso de emergência ou detecção de vazamento.",
-        "price": 139.90,
+        "price": 239.90,
         "imageSrc": "/produtos/valvula-gas.png",
         "destaque": false
     },
@@ -203,7 +203,7 @@
         "id": 26,
         "title": "Purificador de Ar Inteligente",
         "description": "Monitore a qualidade do ar em tempo real e remova impurezas de forma totalmente automática.",
-        "price": 649.90,
+        "price": 5649.90,
         "imageSrc": "/produtos/purificador-ar.png",
         "destaque": false
     },

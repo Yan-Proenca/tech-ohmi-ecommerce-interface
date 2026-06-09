@@ -14,8 +14,8 @@ import {
 
 // Caminhos absolutos apontando para public/carrossel/
 const carrosselImagens = [
-  { src: "/carrossel/casa.png", alt: "Inicio" },
-  { src: "/carrossel/produtos.png", alt: "Produtos" }
+  { src: "/carrossel/home.png", alt: "Inicio" },
+  { src: "/carrossel/products.png", alt: "Produtos" }
 ]
 
 export default function Carrossel() {
