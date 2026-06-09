@@ -28,7 +28,7 @@ export default function Contato() {
               </div>
               <div>
                 <p className="text-xs text-indigo-300 font-medium">Telefone</p>
-                <p className="text-sm font-semibold text-white">+55 (15) 3521-4321</p>
+                <p className="text-sm font-semibold text-white">+55 (15) 99914-3140</p>
               </div>
             </div>
 
@@ -40,7 +40,7 @@ export default function Contato() {
               </div>
               <div>
                 <p className="text-xs text-indigo-300 font-medium">E-mail</p>
-                <p className="text-sm font-semibold text-white">contato@nexusdigital.com.br</p>
+                <p className="text-sm font-semibold text-white">yan@algumacoisa.com.br</p>
               </div>
             </div>
 
@@ -53,7 +53,7 @@ export default function Contato() {
               </div>
               <div>
                 <p className="text-xs text-indigo-300 font-medium">Localização</p>
-                <p className="text-sm font-semibold text-white">Av. Santana, 450 - Itapeva/SP</p>
+                <p className="text-sm font-semibold text-white">Av. Missão, 414 - Itapeva/SP</p>
               </div>
             </div>
           </div>
