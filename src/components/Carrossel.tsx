@@ -36,7 +36,7 @@ export default function Carrossel() {
             <CarouselContent>
                 {carrosselImagens.map((imagem, index) => (
                     <CarouselItem key={index}>
-                        <div className="relative w-full h-[300px] md:h-[650px] overflow-hidden">
+                        <div className="relative w-full h-[300px] md:h-[450px] overflow-hidden">
                             <Image
                               src={imagem.src}
                               alt={imagem.alt}
