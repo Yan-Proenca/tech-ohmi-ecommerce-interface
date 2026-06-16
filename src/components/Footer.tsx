@@ -6,7 +6,7 @@ export default function Footer() {
 
   return (
     <footer className="w-full bg-white border-t border-slate-200 px-36 py-8 flex flex-col gap-6">
-      <div className="flex justify-between items-center text-xs text-slate-400">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400 text-center md:text-left">
         <p>&copy; {currentYear} Tech-Ohmi. Todos os direitos reservados.</p>
         <p className="text-slate-300">Feito com carinho para sua automoção.</p>
       </div>
