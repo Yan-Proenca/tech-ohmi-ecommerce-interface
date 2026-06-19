@@ -11,8 +11,8 @@ export default function Header() {
 
   return (
     <header className="relative w-full bg-white border-b border-slate-200 z-50">
-      {/* Container de Alinhamento Centralizado com preenchimento lateral responsivo */}
-      <div className="max-w-7xl mx-auto h-16 px-4 sm:px-6 lg:px-36 flex items-center justify-between">
+      {/* Container de Alinhamento Centralizado com preenchimento lateral responsivo unificado */}
+      <div className="max-w-7xl mx-auto h-16 px-4 sm:px-6 lg:px-8 flex items-center justify-between">
 
         {/* Bloco de Logotipo e Título */}
         <div className="flex items-center gap-3">
@@ -28,7 +28,7 @@ export default function Header() {
           </h1>
         </div>
 
-        {/* Menu de Navegação Desktop (Escondido no celular, visível a partir de telas 'md') */}
+        {/* Menu de Navegação Desktop */}
         <nav className="hidden md:flex space-x-6">
           <Link href="/" className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">
             Home
@@ -41,39 +41,38 @@ export default function Header() {
           </Link>
         </nav>
 
-        {/* Botão de Menu Sanduíche (Visível apenas em telas menores que 'md') */}
+        {/* Botão de Menu Sanduíche */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden p-2 text-slate-600 hover:text-blue-600 transition-colors focus:outline-none"
           aria-label={isOpen ? "Fechar Menu" : "Abrir Menu"}
         >
-          {/* Altera o ícone dinamicamente com base no estado 'isOpen' */}
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
 
       </div>
 
-      {/* Menu de Navegação Mobile (Exibido de forma suspensa quando isOpen for verdadeiro) */}
+      {/* Menu de Navegação Mobile CORRIGIDO: mudou para flex-col, space-y-3 e z-50 absoluto */}
       {isOpen && (
-        <nav className="md:hidden absolute top-16 left-0 w-full bg-white border-b border-slate-200 shadow-lg px-6 py-4 flex flex-row space-x-4 z-40">
+        <nav className="md:hidden absolute top-16 left-0 w-full bg-white border-b border-slate-200 shadow-xl px-6 py-4 flex flex-col space-y-3 z-50">
           <Link
             href="/"
-            onClick={() => setIsOpen(false)} // Fecha o menu ao clicar no link
-            className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors"
+            onClick={() => setIsOpen(false)}
+            className="text-base font-medium text-slate-600 hover:text-blue-600 transition-colors py-2 border-b border-slate-50"
           >
             Home
           </Link>
           <Link
             href="/produtos"
             onClick={() => setIsOpen(false)}
-            className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors"
+            className="text-base font-medium text-slate-600 hover:text-blue-600 transition-colors py-2 border-b border-slate-50"
           >
             Produtos
           </Link>
           <Link
             href="/contato"
             onClick={() => setIsOpen(false)}
-            className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors"
+            className="text-base font-medium text-slate-600 hover:text-blue-600 transition-colors py-2"
           >
             Contato
           </Link>
