@@ -1,10 +1,11 @@
 "use client"
 
 import { useMemo, useState } from "react"
+import Link from "next/link"
 import CardProduto from "@/components/CardProduto"
-import produtosData from "../../produtos.json"
+import Carrossel from "@/components/Carrossel"
+import produtosData from "../../produtos.json" // Ajuste o caminho relativo se necessário
 
-// Definição da interface do Produto baseada na nova estrutura do JSON
 interface Produto {
   id: string | number
   title: string
@@ -17,29 +18,15 @@ interface Produto {
 
 const produtos = produtosData as Produto[]
 
-type Ordenacao = "relevantes" | "menor-preco" | "maior-preco" | "destaques"
-
-export default function ProdutosPage() {
+export default function HomePage() {
   const [busca, setBusca] = useState("")
-  const [categoriaAtiva, setCategoriaAtiva] = useState<string>("Todos")
-  const [ordenacao, setOrdenacao] = useState<Ordenacao>("relevantes")
 
-  // Extrai dinamicamente as categorias únicas existentes no JSON reestruturado
-  const categorias = useMemo(() => {
-    const unicas = Array.from(new Set(produtos.map((p) => p.categoria)))
-    return ["Todos", ...unicas]
-  }, [])
+  // Filtra dinamicamente os produtos que estão em destaque E que correspondem à busca
+  const produtosDestaqueFiltrados = useMemo(() => {
+    // 1) Filtra apenas os produtos marcados como destaque
+    let resultado = produtos.filter((p) => p.destaque)
 
-  // Pipeline combinado e reativo de busca, filtragem por categoria e ordenação
-  const produtosFiltrados = useMemo(() => {
-    let resultado = [...produtos]
-
-    // 1) Filtro por Categoria Acumulativo
-    if (categoriaAtiva !== "Todos") {
-      resultado = resultado.filter((p) => p.categoria === categoriaAtiva)
-    }
-
-    // 2) Filtro por Texto na Barra de Pesquisa (Título + Descrição, Case-Insensitive)
+    // 2) Aplica o filtro de texto da barra de pesquisa (Título + Descrição)
     const termo = busca.trim().toLowerCase()
     if (termo) {
       resultado = resultado.filter(
@@ -49,51 +36,33 @@ export default function ProdutosPage() {
       )
     }
 
-    // 3) Ordenação Estrita por Preço e Relevância
-    switch (ordenacao) {
-      case "menor-preco":
-        resultado.sort((a, b) => a.price - b.price)
-        break
-      case "maior-preco":
-        resultado.sort((a, b) => b.price - a.price)
-        break
-      case "destaques":
-        resultado = resultado.filter((p) => p.destaque)
-        break
-      case "relevantes":
-      default:
-        // Mantém a ordenação nativa priorizando os itens marcados com destaque no topo
-        resultado.sort((a, b) => (b.destaque ? 1 : 0) - (a.destaque ? 1 : 0))
-        break
-    }
-
     return resultado
-  }, [busca, categoriaAtiva, ordenacao])
+  }, [busca])
 
   return (
     <div className="w-full min-h-screen bg-zinc-50 text-zinc-800 antialiased">
-      {/* Hero / Cabeçalho do Catálogo */}
-      <div className="bg-white border-b border-zinc-200 py-12 md:py-16">
+      
+      {/* 1. Header / Cabeçalho */}
+      <header className="bg-white border-b border-zinc-200 py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left md:flex md:items-center md:justify-between">
           <div className="max-w-2xl">
-            <span className="text-xs font-bold tracking-widest uppercase text-indigo-600">Catálogo Completo</span>
+            <span className="text-xs font-bold tracking-widest uppercase text-indigo-600">Automação Residencial</span>
             <h1 className="text-3xl md:text-4xl font-black text-zinc-900 tracking-tight mt-1">
-              Todos os Produtos
+              Sua Casa Inteligente
             </h1>
             <p className="text-zinc-500 mt-2 text-base md:text-lg">
-              Explore nossa linha completa de automação residencial e transforme sua casa em um espaço inteligente.
+              Explore o futuro do conforto e da segurança com as nossas soluções tecnológicas em destaque.
             </p>
           </div>
-
-          {/* Contador Dinâmico Reativo */}
-          <div className="mt-4 md:mt-0 inline-flex items-center bg-zinc-100 text-zinc-600 px-4 py-2 rounded-full text-xs font-semibold">
-            {produtosFiltrados.length}{" "}
-            {produtosFiltrados.length === 1 ? "produto encontrado" : "produtos encontrados"}
-          </div>
         </div>
+      </header>
+
+      {/* 2. Carrossel (Visível apenas em telas grandes conforme o componente original) */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+        <Carrossel />
       </div>
 
-      {/* Seção Interativa: Barra de Pesquisa Integrada */}
+      {/* 3. Barra de Pesquisa */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
         <div className="relative">
           <svg
@@ -109,77 +78,42 @@ export default function ProdutosPage() {
             type="text"
             value={busca}
             onChange={(e) => setBusca(e.target.value)}
-            placeholder="Buscar por nome ou descrição do produto..."
+            placeholder="Buscar nos produtos em destaque..."
             className="w-full bg-white border border-zinc-200 rounded-xl pl-11 pr-4 py-3 text-sm text-zinc-700 placeholder:text-zinc-400 outline-none focus:ring-2 focus:ring-indigo-500 transition-all shadow-sm"
           />
         </div>
       </div>
 
-      {/* Barra de Ferramentas / Filtros de Categoria e Componente Select */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-zinc-200 pb-6">
-          {/* Mapeamento Automático das Novas Categorias */}
-          <div className="flex flex-wrap gap-2 overflow-x-auto pb-2 md:pb-0 scrollbar-none">
-            {categorias.map((categoria) => {
-              const ativo = categoriaAtiva === categoria
-              return (
-                <button
-                  key={categoria}
-                  onClick={() => setCategoriaAtiva(categoria)}
-                  className={`px-4 py-2 text-xs font-medium rounded-lg transition-all whitespace-nowrap ${
-                    ativo
-                      ? "bg-zinc-900 text-white shadow-sm"
-                      : "bg-white border border-zinc-200 hover:border-zinc-300 text-zinc-600"
-                  }`}
-                >
-                  {categoria}
-                </button>
-              )
-            })}
-          </div>
-
-          {/* Ordenador de Preços e Destaques */}
-          <div className="flex items-center space-x-2 self-end md:self-center">
-            <label htmlFor="sort" className="text-xs font-medium text-zinc-500 whitespace-nowrap">Ordenar por:</label>
-            <select
-              id="sort"
-              value={ordenacao}
-              onChange={(e) => setOrdenacao(e.target.value as Ordenacao)}
-              className="text-xs bg-white border border-zinc-200 rounded-lg px-3 py-2 text-zinc-700 font-medium outline-none focus:ring-2 focus:ring-indigo-500 transition-all cursor-pointer"
-            >
-              <option value="relevantes">Mais Relevantes</option>
-              <option value="menor-preco">Menor Preço</option>
-              <option value="maior-preco">Maior Preço</option>
-              <option value="destaques">Destaques</option>
-            </select>
-          </div>
+      {/* Seção de Conteúdo Principal */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        {/* Título da seção de Destaques */}
+        <div className="mb-8">
+          <h2 className="text-xl md:text-2xl font-bold text-zinc-900 tracking-tight">
+            Produtos em Destaque
+          </h2>
+          <p className="text-sm text-zinc-500">Nossas melhores seleções para o seu ecossistema inteligente.</p>
         </div>
-      </div>
 
-      {/* Grid Principal de Renderização ou Estado Vazio */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
-        {produtosFiltrados.length === 0 ? (
-          <div className="flex flex-col items-center justify-center text-center py-20 bg-white rounded-2xl border border-zinc-200 shadow-sm">
+        {/* 4. Grid de Produtos em Destaque ou Estado Vazio */}
+        {produtosDestaqueFiltrados.length === 0 ? (
+          <div className="flex flex-col items-center justify-center text-center py-16 bg-white rounded-2xl border border-zinc-200 shadow-sm">
             <div className="p-4 bg-zinc-100 rounded-full text-zinc-400 mb-4">
               <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
               </svg>
             </div>
-            <h3 className="font-bold text-zinc-900 text-lg">Nenhum produto encontrado</h3>
+            <h3 className="font-bold text-zinc-900 text-lg">Nenhum destaque encontrado</h3>
             <p className="text-zinc-500 text-sm mt-1 max-w-sm">
-              Tente ajustar o termo pesquisado ou selecione outra categoria para encontrar o que procura.
+              Tente redefinir o termo digitado ou confira nosso catálogo completo.
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 md:gap-8">
-            {produtosFiltrados.map((produto) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {produtosDestaqueFiltrados.map((produto) => (
               <div
                 key={produto.id}
-                className={`relative rounded-2xl transition-all duration-300 ${
-                  produto.destaque
-                    ? "ring-2 ring-indigo-500/20 shadow-md hover:shadow-xl bg-white"
-                    : "hover:shadow-lg bg-white"
-                }`}
+                className="relative rounded-2xl bg-white ring-2 ring-indigo-500/20 shadow-md hover:shadow-xl transition-all duration-300"
               >
                 <CardProduto
                   id={produto.id}
@@ -193,6 +127,30 @@ export default function ProdutosPage() {
             ))}
           </div>
         )}
+
+        {/* 5. Bloco de Catálogo direcionando para /produtos */}
+        <div className="mt-16 bg-gradient-to-r from-zinc-900 to-indigo-950 rounded-3xl p-8 md:p-12 shadow-lg text-white flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="max-w-xl text-center md:text-left">
+            <h3 className="text-2xl md:text-3xl font-black tracking-tight">
+              Não encontrou o que procurava?
+            </h3>
+            <p className="text-zinc-300 mt-2 text-sm md:text-base">
+              Explore nossa linha completa de automação residencial. Temos um catálogo inteiro segmentado por categorias para transformar todos os cômodos da sua casa.
+            </p>
+          </div>
+          <div className="w-full md:w-auto flex justify-center">
+            <Link
+              href="/produtos"
+              className="inline-flex items-center justify-center bg-white text-zinc-900 hover:bg-indigo-50 font-bold text-sm px-8 py-4 rounded-xl shadow-md transition-all active:scale-95 whitespace-nowrap"
+            >
+              Ver Catálogo Completo
+              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+
       </main>
     </div>
   )
